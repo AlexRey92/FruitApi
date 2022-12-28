@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textViewID"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/textViewFruit"
+        app:layout_constraintTop_toTopOf="@+id/textViewFruit" />
+
+    <TextView
+        android:id="@+id/textViewFruit"
+        android:textColor="@color/black"
+        android:layout_width="130dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="120dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Carbohidratos"
+        android:textColor="@color/black"
+        android:layout_width="45dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Carb:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewID" />
+
+    <TextView
+        android:id="@+id/textViewCarbo"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/Carbohidratos"
+        app:layout_constraintTop_toTopOf="@+id/Carbohidratos" />
+
+    <TextView
+        android:id="@+id/Proteinas"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Pro:"
+        app:layout_constraintStart_toEndOf="@+id/textViewCarbo"
+        app:layout_constraintTop_toTopOf="@+id/textViewCarbo" />
+
+    <TextView
+        android:id="@+id/textViewPro"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/Proteinas"
+        app:layout_constraintTop_toTopOf="@+id/Proteinas" />
+
+    <TextView
+        android:id="@+id/Calorias"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Cal:"
+        app:layout_constraintStart_toEndOf="@+id/textViewPro"
+        app:layout_constraintTop_toTopOf="@+id/textViewPro" />
+
+    <TextView
+        android:id="@+id/textViewCal"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/Calorias"
+        app:layout_constraintTop_toTopOf="@+id/Calorias" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="92dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="160dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Proteinas"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textViewFamily"
+        android:textStyle="italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textViewFruit"
+        app:layout_constraintTop_toTopOf="@+id/textViewFruit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
