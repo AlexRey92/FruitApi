@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
-class FruitAdapter(var fruta: List<Fruit>):RecyclerView.Adapter<FruitAdapter.ViewHolder>() {
-    inner class ViewHolder(val view:View):RecyclerView.ViewHolder(view){
+class FruitAdapter(var fruta: MutableList<Fruit>):RecyclerView.Adapter<FruitAdapter.ViewHolder>() {
+    inner class ViewHolder( view:View):RecyclerView.ViewHolder(view){
         val carbohidratos:TextView=view.findViewById(R.id.textViewCarbo)
         val proteinas:TextView=view.findViewById(R.id.textViewPro)
         val nombre:TextView=view.findViewById(R.id.textViewFruit)
@@ -21,10 +21,10 @@ class FruitAdapter(var fruta: List<Fruit>):RecyclerView.Adapter<FruitAdapter.Vie
         fun onBind(comida:Fruit){
             carbohidratos.text=comida.carbohydrates.toString()
            proteinas.text=comida.protein.toString()
-            nombre.text=comida.name.toString()
+            nombre.text=comida.name
             calorias.text=comida.calories.toString()
             id.text=comida.id.toString()
-            family.text=comida.family.toString()
+            family.text=comida.family
            Picasso.get().load(imagen).into(foto)
         }
 

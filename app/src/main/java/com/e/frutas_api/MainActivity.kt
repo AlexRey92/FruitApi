@@ -23,14 +23,16 @@ import retrofit2.create
 
 class MainActivity : AppCompatActivity()  {
     private lateinit var recyclerView: RecyclerView
-    private  var listofFruits= listOf<Fruit>()
-    private lateinit var adapter:FruitAdapter
+    private  var listofFruits= mutableListOf<Fruit>()
+    private lateinit var Adapter:FruitAdapter
+    private  var lista= mutableListOf<Fruit>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         recyclerView=findViewById(R.id.recyclerView)
         recyclerView.layoutManager=LinearLayoutManager(this)
-        recyclerView.adapter=adapter
+        Adapter= FruitAdapter(lista)
+        recyclerView.adapter=Adapter
         getRetrofit()
         CreateNotificationChannel()
         CreateNotification()
@@ -42,18 +44,18 @@ class MainActivity : AppCompatActivity()  {
         CoroutineScope(Dispatchers.IO).launch {
             val call = getRetrofit().create(ApiService::class.java).getAllFruits()
             val response = call.body()
-
             runOnUiThread {
                 if (call.isSuccessful) {
-                    listofFruits= response?.fruits?.map { Fruits -> Fruits.MapFruit() }!!
-                } else {
-                  listofFruits= emptyList()
+                    listofFruits.clear()
+                    response?.apply {listofFruits=this.map { FruitResponse->FruitResponse.mapFruit() } as MutableList<Fruit> }!!
+                    Adapter.fruta=listofFruits
+                    Adapter.notifyDataSetChanged()
                 }
-
-
+                }
             }
+
         }
-    }
+
 
     private fun CreateNotification() {
         val intent= Intent(this,MainActivity::class.java)

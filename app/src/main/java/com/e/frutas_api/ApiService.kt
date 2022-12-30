@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET(value = "all")
-    suspend fun getAllFruits():Response<FruitResponse>
+    suspend fun getAllFruits():Response<MutableList<FruitResponse>>
 
 }
